@@ -29,7 +29,7 @@ public class FlutterExifRotationPlugin implements FlutterPlugin, MethodCallHandl
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
-        applicationContext = binding.applicationContext;
+        applicationContext = binding.getApplicationContext();
         methodChannel = new MethodChannel(binding.getBinaryMessenger(), CHANNEL_NAME);
         methodChannel.setMethodCallHandler(this);
     }
